@@ -27,11 +27,17 @@
         wins++;
         updatePage();
     }
-    
-    if(computerGuess != userGuess){
-        guessesLeft--;
+    else{
+        //push user guess to the printed array
+        userGuesses.push(userGuess);
+        //lower # of guesses left by 1
+        guessesLeft = 9;
         updatePage();
     }
+    // if(computerGuess != userGuess){
+    //     guessesLeft--;
+    //     updatePage();
+    // }
     if (guessesLeft = 0){
         losses++;
         updatePage();
@@ -48,7 +54,7 @@ function updatePage(){
         "<p>wins: " + wins + "</p>" +
         "<p>losses: " + losses + "</p>" +
         "<p>Guesses Left: " + guessesLeft + "</p>" +
-        "<p>Your Guesses so far: " + userGuess + "</p>"
+        "<p>Your Guesses so far: " + userGuesses + "</p>"
 //  );
 
  document.querySelector("#game").innerHTML = html;
