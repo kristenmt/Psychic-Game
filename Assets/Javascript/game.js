@@ -1,9 +1,12 @@
+
+
+
 //display wins and losses
     var wins = 0;
     var losses = 0;
 
 //display # of guesses left
-    var guessesLeft = 0;
+    var guessesLeft = 9;
 //the letters user has guessed so far
     var userGuesses = [];
 //when user wins, game will start over again
@@ -22,9 +25,25 @@
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
 //need to define what gets a point and what loses a point
-
+    if(computerChoices && userGuesses){
+        wins++;
+    }
+    else{
+        losses--;
+    };
 //need to define how many guesses user will be allowed (loop)
-
+    
 //determine win value and loss value
 
+//variable to have html info displayed
+   document.write(
+          "<p>You chose: " + userGuesses + "</p>" +
+          "<p>The computer chose: " + computerGuess + "</p>" +
+          "<p>wins: " + wins + "</p>" +
+          "<p>losses: " + losses + "</p>"
+   )
+;
+
 //reset game when the game is over
+};
+
