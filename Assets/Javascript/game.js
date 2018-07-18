@@ -27,15 +27,15 @@
         wins++;
         updatePage();
     }
-    if (guessesLeft = 0){
-        losses++;
-        updatePage();
-    }
+    
     if(computerGuess != userGuess){
         guessesLeft--;
         updatePage();
     }
-    
+    if (guessesLeft = 0){
+        losses++;
+        updatePage();
+    }
 //determine win value and loss value
 //when user wins, game will start over again
 
@@ -43,15 +43,17 @@
 
 //variable to have html info displayed
 function updatePage(){
-    document.write(
+    // document.write(
+        var html = "<h1>Guess what letter I'm thinking of!</h1>" +
         "<p>wins: " + wins + "</p>" +
         "<p>losses: " + losses + "</p>" +
         "<p>Guesses Left: " + guessesLeft + "</p>" +
-        "<p>Your Guesses so far: " + userGuesses + "</p>"
- );
-}
-   
+        "<p>Your Guesses so far: " + userGuess + "</p>"
+//  );
+
+ document.querySelector("#game").innerHTML = html;
 
 //reset game when the game is over
-};
+}
+    }
 
