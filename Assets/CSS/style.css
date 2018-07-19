@@ -1,0 +1,7 @@
+.container{
+    background-color: rgb(223, 221, 222);
+}
+#heading {
+    border-bottom: 2px solid rgb(136, 107, 136);
+    padding-bottom: 5px;
+}
