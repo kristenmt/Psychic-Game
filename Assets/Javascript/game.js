@@ -11,16 +11,23 @@
 
 //need to define options computer will guess from
     var computerChoices = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+// Randomly chooses a choice from the options array. This is the Computer's guess.
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+//what the computer randomly chooses
+//to be stored in order to match against user choices
+var computerFinalGuess = [computerGuess];
+//need to let computer know to measure its guess against users guess when user touch/release key
+   console.log("computer guess" + computerGuess);
+
 
 //run function when user presses and releases a key
     document.onkeyup = function(event) {
  // Determines which key was pressed.
     var userGuess = event.key;
     console.log("user Guess" + userGuess);
-// Randomly chooses a choice from the options array. This is the Computer's guess.
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-//need to let computer know to measure its guess against users guess when user touch/release key
-   console.log("computer guess" + computerGuess);
+
+
     
 //need to define what gets a point and what loses a point
 //if user guesses correctly
@@ -46,10 +53,10 @@
     for(let guessesLeft=9; guessesLeft > -1; guessesLeft--){
         console.log("guesses left");
     }
-    // if(computerGuess != userGuess){
-    //     guessesLeft--;
-    //     updatePage();
-    // }
+    if(computerGuess != userGuess){
+        guessesLeft--;
+        updatePage();
+    }
     //if user loses after trying 9 times to guess
     if (guessesLeft = 0){
         losses++;
