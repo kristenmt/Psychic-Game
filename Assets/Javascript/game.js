@@ -31,7 +31,7 @@ document.onkeyup = function (event) {
 
     //need to define what gets a point and what loses a point
     //if user guesses correctly
-    if ((computerGuess === userGuess) && (guessesLeft > 0)){
+    if ((computerFinalGuess === userGuess) && (guessesLeft > 0)){
         wins++;
         //resets game
         guessesLeft = 9;
@@ -58,13 +58,13 @@ document.onkeyup = function (event) {
     //     updatePage();
     // }
     //if user loses after trying 9 times to guess
-    else if (guessesLeft = 0) {
+    else{
         losses++;
         //resets game
         guessesLeft = 9;
         userGuesses.length = 0;
-        computerGuess.length = 0;
-        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        computerFinalGuess.length = 0;
+        // var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
         console.log("you lose!");
         updatePage();
     }
