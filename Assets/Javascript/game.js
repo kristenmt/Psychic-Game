@@ -18,14 +18,14 @@ var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.l
 //to be stored in order to match against user choices
 var computerFinalGuess = [computerGuess];
 //need to let computer know to measure its guess against users guess when user touch/release key
-console.log("computer guess" + computerGuess);
+console.log("computer guess " + computerGuess);
 
 
 //run function when user presses and releases a key
 document.onkeyup = function (event) {
     // Determines which key was pressed.
     var userGuess = event.key;
-    console.log("user Guess" + userGuess);
+    console.log("user Guess " + userGuess);
 
 
 
@@ -73,7 +73,7 @@ document.onkeyup = function (event) {
     }
     if ((wins > 0) || (losses > 0)){
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-        console.log("new computer guess");
+        console.log("new computer guess " + computerGuess);
     }
     //determine win value and loss value
     //when user wins, game will start over again
