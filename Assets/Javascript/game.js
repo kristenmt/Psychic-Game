@@ -21,27 +21,47 @@
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 //need to let computer know to measure its guess against users guess when user touch/release key
    console.log("computer guess" + computerGuess);
-
+    
 //need to define what gets a point and what loses a point
+//if user guesses correctly
     if(computerGuess === userGuess){
         wins++;
+        //resets game
+        guessesLeft = 9;
+        userGuesses.length = 0;
+        computerGuess.length = 0;
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        console.log("you win!");
         updatePage();
     }
     else{
         //push user guess to the printed array
         userGuesses.push(userGuess);
-        //lower # of guesses left by 1
-        guessesLeft = 9;
+        
+        console.log("try again...");
+        // guessesLeft = guessesLeft;
         updatePage();
+    }
+    //lower # of guesses left by 1
+    for(let guessesLeft=9; guessesLeft > -1; guessesLeft--){
+        console.log("guesses left");
     }
     // if(computerGuess != userGuess){
     //     guessesLeft--;
     //     updatePage();
     // }
+    //if user loses after trying 9 times to guess
     if (guessesLeft = 0){
         losses++;
+        //resets game
+        guessesLeft = 9;
+        userGuesses.length = 0;
+        computerGuess.length = 0;
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        console.log("you lose!");
         updatePage();
     }
+   
 //determine win value and loss value
 //when user wins, game will start over again
 
