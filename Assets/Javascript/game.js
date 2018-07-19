@@ -83,7 +83,7 @@ document.onkeyup = function (event) {
     //variable to have html info displayed
     function updatePage() {
         // document.write(
-        var html = "<h1>Guess what letter I'm thinking of!</h1>" +
+        var html = 
             "<p>wins: " + wins + "</p>" +
             "<p>losses: " + losses + "</p>" +
             "<p>Guesses Left: " + guessesLeft + "</p>" +
