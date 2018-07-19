@@ -31,13 +31,13 @@ document.onkeyup = function (event) {
 
     //need to define what gets a point and what loses a point
     //if user guesses correctly
-    if ((computerFinalGuess === userGuess) && (guessesLeft > 0)){
+    if ((computerGuess === userGuess) && (guessesLeft > 0)){
         wins++;
         //resets game
         guessesLeft = 9;
         userGuesses.length = 0;
         computerGuess.length = 0;
-        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        // var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
         console.log("you win!");
         updatePage();
     }
