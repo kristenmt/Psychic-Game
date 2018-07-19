@@ -37,9 +37,12 @@ document.onkeyup = function (event) {
         guessesLeft = 9;
         userGuesses.length = 0;
         computerGuess.length = 0;
-        // var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        
+        computerFinalGuess = [];
+        
         console.log("you win!");
         updatePage();
+        //var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     }
     else if ((userGuess !== computerGuess) && (guessesLeft > 0)){
         //push user guess to the printed array
@@ -68,7 +71,10 @@ document.onkeyup = function (event) {
         console.log("you lose!");
         updatePage();
     }
-
+    if ((wins > 0) || (losses > 0)){
+        computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        console.log("new computer guess");
+    }
     //determine win value and loss value
     //when user wins, game will start over again
 
